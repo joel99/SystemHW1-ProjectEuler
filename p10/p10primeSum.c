@@ -8,9 +8,9 @@ int primes[1000000];
 //index is last prime known so far
 int nextPrime(int index){
   int n = primes[index];
-  n++;
+  n++; //n is 3 now
   int ctr;
-  int isPrime = 0;
+  int isPrime = 0; //flag
   while (!isPrime){
     for (ctr = 0; ctr <= index; ctr++){
       if (n % primes[ctr] == 0) break;
@@ -37,8 +37,9 @@ int main(){
   int i = 0;
   while (primes[i] < 2000000){
     nextPrime(i);
+    //printf("prime:%d \n", primes[i]);
     i++;
   }
-  printf("%d", sumArr(primes, i));
+  //printf("%ld", sumArr(primes, i));
   return 0;
 }
